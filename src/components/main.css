@@ -1,0 +1,178 @@
+.activeClass .nav-link:hover {
+    border-bottom: white 1px solid;
+  }
+li{
+    list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6,p,span,li{
+    margin: 0;
+}
+.bttn{
+    color: red;
+}
+.brand_name img{
+    -webkit-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+
+}
+.brand_name{
+    color: white !important;
+    font-size: 24px !important;
+    font-weight: 200;
+    font-family: 'Montserrat';
+    letter-spacing: 4px;
+    text-shadow: 0px 2px 6px white;
+}
+.navbar_collaps a{
+    color: white !important;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+/* .up-down{
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@-webkit-keyframes up-down {
+    0%{
+        transform: rotateY(10px);
+    }100%{
+        transform: rotateY(-10px);
+    }
+} */
+.backwave{
+    background-image: url(../assets/img/wave.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    margin-top: 100px;
+    background-position: bottom;
+}
+.footer{
+    background-image: url(../assets/img/bottomwave.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+.contact_head{
+    background-image: url(../assets/img/contactus.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50vh;
+    width: 100%;
+}
+.contact_head h1{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0px 6px 10px black;
+    font-weight: 900;
+    text-align: center;
+}
+.footer .container-fluid{
+    padding: 70px 0;
+}
+.covidmain{
+    font-size: 150px;
+    letter-spacing: 30px;
+}
+.home_img img{
+    width: 150%;
+}
+.cover .col-md-6{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.cover .col-md-6 h1,.world_wide h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0px 6px 10px black;
+    font-weight: 900;
+}
+.footer_brand{
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0px 6px 10px black;
+    font-weight: 900;
+    letter-spacing:5px;
+    padding:20px 0;
+}
+.footerbutton{
+    box-shadow: 0px 3px 15px -3px black;
+}
+.footermiddle li{
+    padding: 5px 0;
+}
+.footermiddle a{
+    font-size: 20px;
+    color: #6d80cf;
+    font-weight: 600;
+    text-decoration: none;
+}
+.card_back{
+    background-image: url(../assets/img/cardwave.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card_text{
+    text-transform: uppercase;
+    letter-spacing: 10px !important;
+}
+
+.rightArrow {
+    font-size:12px
+}
+/* , #fb8817, #ff4b01, #c12127, #e02aff) 3; */
+.conatct_card{
+    box-shadow: inset 0px 0px 48px -22px royalblue !important;
+    margin-bottom: 50px;
+}
+.about_desc{
+    text-align: center;
+    font-size: 22px;
+    color: #6d80cf;
+    padding: 25px 0;
+    text-transform: capitalize;
+}
+.about_des{
+    padding:50px 0;
+}
+.about_img img{
+    border-radius: 50%;
+    box-shadow: 0px 0px 30px -16px blue;
+}
+.about_cont p{
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+.about_cont a{
+    margin-right: 20px
+}
+.about_cont a svg{
+    height: 40px;
+    width: 40px;
+}
+.card_image{
+    height: 200px;
+    width: 250px;
+    display: flex;
+    margin: auto;
+}
