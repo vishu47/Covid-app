@@ -1,12 +1,15 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import Homecard from './Homecard'
+import AllData from './home/AllData'
 import Footer from './Footer'
 import Chart from './home/Chart'
-import './main.css'
 import {Container,Row,Col} from 'react-bootstrap'
 import links from '../assets/img/covid/corona.png'
 import { Link } from 'react-router-dom'
-import {Button,Paper,Card,CardActionArea,CardMedia,Typography,CardContent,CardActions} from '@material-ui/core'
+import {Button} from '@material-ui/core'
+import Tilty from "react-tilty";
+
+
 
 var CardData = [
     {
@@ -42,7 +45,46 @@ var CardData = [
 ];
 
 
-export default function Home() {
+
+export default function Home(props) {
+    var data = {...props.data}
+    const [cdata , setCdata] = useState();
+     useEffect(() => {
+        setCdata(data)
+    }, [props]);
+
+    console.log(cdata);
+    var allData = [
+        {
+            kul: cdata.summary.total,
+            name: 'Total Case'
+        },
+        {
+            kul: cdata.summary.confirmedCasesIndian,
+            name: 'Total Indian Case'
+
+        },
+        {
+            kul: cdata.summary.discharged,
+            name: 'Total Discharged'
+
+        },
+        {
+            kul: cdata.summary.deaths,
+            name: 'Total Deaths'
+
+        },
+        {
+            kul: cdata.summary.confirmedCasesForeign,
+            name: 'Total Foreigers'
+
+        },
+        {
+            kul: cdata.summary.total,
+            name: 'Total Active Case'
+
+        }
+    ];
     return (
         <>
             <div className="container-fluid backwave">
@@ -52,21 +94,39 @@ export default function Home() {
                         <div className="col-md-6">
                             <h1> <span className="covidmain"> Covid </span> <br/> <span>  Detail App </span> </h1> <br/>
                             <Link to="contact" >
-                                <Button  variant="contained" color="secondary">
-                                    Hello India
-                                </Button>
+                                {/* <Tilty className="tilty" glare scale={1} maxGlare={0.0}> */}
+                                    <Button  variant="contained" color="secondary">
+                                        Hello India
+                                    </Button>
+                                {/* </Tilty> ~ */}
                             </Link>
                         </div>
+                        
                         <div className="col-md-6 home_img">
-                        {/* <Paper className="" elevation={3}> */}
-                            <img className="up-down"  src={links} alt="" />
-                        {/* </Paper> */}
+                            <Tilty className="tilty" glare scale={1.05} maxGlare={0.0}>
+                                <img className=" data-tilt up-down"  src={links} alt="" />
+                            </Tilty>
                         </div>
                     </div>   
                 </section>
             </Container>
             </div>
 
+            
+
+                <section>
+                    <Row>
+                        {
+                            allData.map((data , num) => {
+                                return  <AllData 
+                                    keys = {num}
+                                    latest = {data.kul}
+                                    name = {data.name} 
+                                />
+                            })
+                        }
+                    </Row>
+                </section>
             <Container>
                 <section>
                     <Row>
@@ -74,8 +134,9 @@ export default function Home() {
                             <h1>Nation Wide Covid Details</h1>   
                         </div>
                         {
-                            CardData.map((cards) => {
-                               return  <Homecard
+                            CardData.map((cards,key) => {
+                               return  <Homecard 
+                                    key={key}
                                     image = "false"
                                     country = { cards.country }
                                     number = { cards.number }

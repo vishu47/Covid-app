@@ -176,3 +176,13 @@ h1,h2,h3,h4,h5,h6,p,span,li{
     display: flex;
     margin: auto;
 }
+.alldatacolor{
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,0.42667489359024857) 35%, rgba(221,221,221,1) 100%);
+}
+.customecardtext{
+    font-size: 23px !important;
+    color: rgb(109, 128, 207);
+    letter-spacing: 0 !important;
+    text-transform: uppercase;
+}

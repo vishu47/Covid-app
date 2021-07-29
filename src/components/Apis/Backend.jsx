@@ -1,9 +1,10 @@
 import React,{useEffect, useState} from 'react'
+import Home from '../../components/Home';
 
 
 
 export default function Backend() {
-    const [data, setData] = useState();
+    const [data , setData] = useState();
 
     useEffect(() => {
         const fetcApi = async () => {
@@ -11,16 +12,14 @@ export default function Backend() {
             const res = await fetch(url);
             // const json = JSON.parse(res)
             setData(res);
+            console.log(res)
         }
         fetcApi();
-    }, [data]);
+    }, []);
 
-
-    return (
+    return(
         <>
-            {
-               data
-            }
+            <Home prop = {data} />
         </>
     )
 }

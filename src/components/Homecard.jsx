@@ -10,10 +10,10 @@ export default function Homecard(props) {
     return (
         <>
             <div width="" className=" col-md-4 pt-4 pb-4">
-                <Card className="card_back">
+                <Card key={props.keys} className="card_back">
                     <CardActionArea classnames="text-center">
                         {
-                            props.image == 'false'? ' ':
+                            props.image === 'false'? ' ':
                                 <CardMedia
                                     className = "card_image"
                                     image={props.image}
@@ -36,10 +36,10 @@ export default function Homecard(props) {
                         </CardContent>
                     </CardActionArea>
                     {
-                        props.chart == 'true' ? <CardChart title = {props.country} /> : ''
+                        props.chart === 'true' ? <CardChart title = {props.country} /> : ''
                     }
                     {
-                        props.button == 'true' ? <small className=" mb-2" style={{float:"right"}}><Link to="">Know more</Link><ArrowForwardIosIcon/></small> : ''
+                        props.button === 'true' ? <small className=" mb-2" style={{float:"right"}}><Link to="">Know more</Link><ArrowForwardIosIcon/></small> : ''
                     }
                 </Card>
             </div>
